@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016.
+  ~ Breezee.com All Rights Reserved.
+  -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="${spring.datasource.driver-class-name}"/>
+        <property name="url" value="${spring.datasource.url}"/>
+        <property name="username" value="${spring.datasource.username}"/>
+        <property name="password" value="${spring.datasource.password}"/>
+        <property name="initialSize" value="${dbcp2.initialSize}"/>
+        <property name="maxTotal" value="${dbcp2.maxTotal}"/>
+        <property name="maxIdle" value="${dbcp2.maxIdle}"/>
+        <property name="minIdle" value="${dbcp2.minIdle}"/>
+        <property name="validationQuery" value="${dbcp2.validationQuery}"/>
+        <property name="testOnCreate" value="${dbcp2.testOnCreate}"/>
+        <property name="testOnBorrow" value="${dbcp2.testOnBorrow}"/>
+        <property name="testOnReturn" value="${dbcp2.testOnReturn}"/>
+        <property name="testWhileIdle" value="${dbcp2.testWhileIdle}"/>
+        <property name="timeBetweenEvictionRunsMillis" value="${dbcp2.timeBetweenEvictionRunsMillis}"/>
+        <property name="numTestsPerEvictionRun" value="${dbcp2.numTestsPerEvictionRun}"/>
+        <property name="removeAbandonedOnMaintenance" value="${dbcp2.removeAbandonedOnMaintenance}"/>
+        <property name="removeAbandonedOnBorrow" value="${dbcp2.removeAbandonedOnBorrow}"/>
+        <property name="removeAbandonedTimeout" value="${dbcp2.removeAbandonedTimeout}"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config>
+        <aop:pointcut id="interceptorPointCuts" expression="execution(* com.breezee.*.impl.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="interceptorPointCuts"/>
+    </aop:config>
+
+</beans>
