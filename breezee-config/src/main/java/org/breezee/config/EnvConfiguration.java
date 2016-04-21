@@ -17,6 +17,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 
+import java.util.TimeZone;
+
 /**
  * Created by Silence on 2016/2/9.
  */
@@ -54,19 +56,10 @@ public class EnvConfiguration implements InitializingBean {
         return new DubboLocaleFilter();
     }
 
-    @Bean
-    public RetInfoBuilder successInfo() {
-        return new RetInfoBuilder.SuccessInfo();
-    }
-
-    @Bean
-    public RetInfoBuilder errorInfo() {
-        return new RetInfoBuilder.ErrorInfo();
-    }
-
     @Override
     public void afterPropertiesSet() throws Exception {
         System.setProperty("user.timezone", "Asia/Shanghai");
+        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
         System.out.println(this.getClass().getName() + ": user.timezone--->Asia/Shanghai");
     }
 }

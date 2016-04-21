@@ -11,9 +11,9 @@
 
     <!-- Dubbo应用信息 -->
     <dubbo:application
-            name="${dubbo.application.name}"
-            owner="${dubbo.application.owner}"
-            organization="${dubbo.application.organization}"/>
+            name="dubbo-app-breezee"
+            owner="breezee"
+            organization="breezee"/>
 
     <!-- 服务注册, 开发态下，非此模块的开发人员，设置register为false -->
     <dubbo:registry

@@ -14,42 +14,78 @@ import java.util.Map;
  * 将被系统内的所有领域对象所继承
  * Created by Silence on 2016/2/6.
  */
-public class BaseInfo implements Serializable, Cloneable {
+public class BaseInfo implements Serializable, Cloneable, IDumpObject {
 
     public static final int STATUS_ON = 1;
     public static final int STATUS_OFF = 0;
     public static final int STATUS_SUCCESS = 100;
     public static final int STATUS_ERROR = -100;
 
-    protected Long id;
+    /**
+     * 数据主键
+     */
+    protected String id;
 
+    /**
+     * 业务主键
+     */
     protected String code;
 
+    /**
+     * 名称
+     */
     protected String name;
 
+    /**
+     * 状态
+     */
     protected int status = STATUS_ON;
 
+    /**
+     * 描述或者备注信息
+     */
     protected String remark;
 
+    /**
+     * 创建人
+     */
     protected String creator;
 
+    /**
+     * 创建时间
+     */
     protected Date createTime;
 
+    /**
+     * 更新人
+     */
     protected String updator;
 
+    /**
+     * 更新时间
+     */
     protected Date updateTime;
 
+    /**
+     * 租户ID
+     */
     protected String tenantId;
 
+    /**
+     * 语言
+     */
     protected String language;
 
+    /**
+     * 扩展属性信息
+     */
     protected Map<String,Object> properties;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -143,6 +179,12 @@ public class BaseInfo implements Serializable, Cloneable {
         this.properties = properties;
     }
 
+    /**
+     * 查询的强类型映射控制。
+     * 在子类中实现
+     * @param query
+     * @return
+     */
     public boolean checkQuery(Map<String,Object> query){
         //在子类中，强制指定其查询条件。
         //1. 使查询条件强类型
@@ -170,4 +212,8 @@ public class BaseInfo implements Serializable, Cloneable {
         return sb.toString();
     }
 
+    @Override
+    public void dump() {
+        System.out.println(this.id+"--"+this.code+"--"+this.name+"--"+this.status);
+    }
 }
