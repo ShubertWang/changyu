@@ -2,7 +2,7 @@
  * Copyright (c) 2016 Breezee.org. All Rights Reserved.
  */
 
-package org.breezee.crm.api;
+package org.breezee.crm.api.domain;
 
 import org.breezee.common.domain.BaseInfo;
 

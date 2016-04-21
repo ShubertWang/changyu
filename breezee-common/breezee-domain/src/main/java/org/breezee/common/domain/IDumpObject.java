@@ -13,5 +13,5 @@ public interface IDumpObject {
     /**
      * 在控制台输出调试信息
      */
-    public void dump();
+    void dump();
 }

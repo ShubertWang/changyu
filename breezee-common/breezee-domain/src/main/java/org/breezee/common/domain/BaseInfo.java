@@ -77,6 +77,19 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
     protected String language;
 
     /**
+     * 每张表，确保此值被写入
+     * 行数，一般用来做排序的
+     * 在存入缓存的时候，也可以用来做分页查询
+     * 所以我们在保存对象的时候，一定要设置好此值得正确性。
+     */
+    protected Long rowNum;
+
+    /**
+     * 版本，用来实现乐观锁
+     */
+    protected Integer version;
+
+    /**
      * 扩展属性信息
      */
     protected Map<String,Object> properties;
@@ -167,6 +180,22 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public Long getRowNum() {
+        return rowNum;
+    }
+
+    public void setRowNum(Long rowNum) {
+        this.rowNum = rowNum;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
     }
 
     public Map<String, Object> getProperties() {
