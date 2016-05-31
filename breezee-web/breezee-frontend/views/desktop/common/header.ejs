@@ -1,0 +1,115 @@
+<nav class="navbar navbar-default navbar-static-top" id="pageHeader">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="<%= global.config.contextPath + global.config.viewPrefix %>/index"
+               style="padding:0;">
+                <img src="<%= global.config.publicPath %>/custom/images/icon/LOGO.png" style="height:50px;"/>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li menuCode="index"><a href="<%= global.config.contextPath + global.config.viewPrefix %>/index">首页</a>
+                </li>
+
+
+                <li menuCode="<%= session.userRoles['orderMgt']; %>" class="dropdown">
+                    <a href="<%= global.config.contextPath + global.config.viewPrefix %>#" class="dropdown-toggle"
+                       data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">订单管理<span
+                                class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li menuCode="<%= session.userRoles['undoList']; %>"><a class="navMenu"
+                                                                                href="<%= global.config.contextPath + global.config.viewPrefix %>/workspace/undoList">我的待办</a>
+                        </li>
+                        <li menuCode="<%= session.userRoles['queryOrderList']; %>"><a class="navMenu"
+                                                                                      href="<%= global.config.contextPath + global.config.viewPrefix %>/workspace/queryOrderList">订单查询</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li menuCode="<%= session.userRoles['prdMgt']; %>" class="dropdown">
+                    <a href="<%= global.config.contextPath + global.config.viewPrefix %>#" class="dropdown-toggle"
+                       data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">商品管理<span
+                                class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <!--<li><a class="navMenu" href="<%= global.config.contextPath + global.config.viewPrefix %>product/catalogManagement">目录维护</a></li>-->
+                        <li menuCode="<%= session.userRoles['categoryManagement']; %>"><a class="navMenu"
+                                                                                          href="<%= global.config.contextPath + global.config.viewPrefix %>/category/categoryManagement">品类维护</a>
+                        </li>
+                        <li menuCode="<%= session.userRoles['attributeManagement']; %>"><a class="navMenu"
+                                                                                           href="<%= global.config.contextPath + global.config.viewPrefix %>/category/attributeManagement">属性维护</a>
+                        </li>
+                        <li menuCode="<%= session.userRoles['productList']; %>"><a class="navMenu"
+                                                                                   href="<%= global.config.contextPath + global.config.viewPrefix %>/product/productList">菜品维护</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li menuCode="<%= session.userRoles['customerManagement']; %>"><a class="navMenu"
+                                                                                  href="<%= global.config.contextPath + global.config.viewPrefix %>/crm/customerManagement">客户管理</a>
+                </li>
+
+
+                <li menuCode="<%= session.userRoles['sysMgt']; %>" class="dropdown">
+                    <a href="<%= global.config.contextPath + global.config.viewPrefix %>#" class="dropdown-toggle"
+                       data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">系统管理<span
+                                class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li menuCode="<%= session.userRoles['accountManagement']; %>"><a class="navMenu"
+                                                                                         href="<%= global.config.contextPath + global.config.viewPrefix %>/auth/accountManagement">账号管理</a>
+                        </li>
+                        <li menuCode="<%= session.userRoles['organizationManagement']; %>"><a class="navMenu"
+                                                                                              href="<%= global.config.contextPath + global.config.viewPrefix %>/auth/organizationManagement">组织管理</a>
+                        </li>
+                        <li menuCode="<%= session.userRoles['roleManagement']; %>"><a class="navMenu"
+                                                                                      href="<%= global.config.contextPath + global.config.viewPrefix %>/auth/roleManagement">角色管理</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li menuCode="<%= session.userRoles['messhallList']; %>"><a class="navMenu"
+                                                                                    href="<%= global.config.contextPath + global.config.viewPrefix %>/restaurant/messhallList">营运点管理</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li menuCode="<%= session.userRoles['dict']; %>"><a class="navMenu"
+                                                                            href="<%= global.config.contextPath + global.config.viewPrefix %>/dict/dict">枚举维护</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li menuCode="<%= session.userRoles['menuManagement']; %>"><a class="navMenu"
+                                                                                      href="<%= global.config.contextPath + global.config.viewPrefix %>/wechat/menuManagement">公众号菜单</a>
+                        </li>
+                        <li menuCode="<%= session.userRoles['materialManagement']; %>"><a class="navMenu"
+                                                                                          href="<%= global.config.contextPath + global.config.viewPrefix %>/wechat/materialManagement">微信素材管理</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li menuCode="<%= session.userRoles['articleManagement']; %>"><a class="navMenu"
+                                                                                 href="<%= global.config.contextPath + global.config.viewPrefix %>/article/articleManagement">新闻管理</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="<%= global.config.contextPath + global.config.viewPrefix %>#" class="dropdown-toggle"
+                       data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><%= session.userName %><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="navMenu"
+                               href="<%= global.config.contextPath + global.config.viewPrefix %>/auth/index-myInfo">个人信息</a>
+                        </li>
+                        <li><a class="navMenu"
+                               href="<%= global.config.contextPath + global.config.viewPrefix %>/../login/logout">退出</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>

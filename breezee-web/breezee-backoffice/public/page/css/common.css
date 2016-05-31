@@ -1,0 +1,232 @@
+/*
+ * Copyright (c) 2016 Breezee.org. All Rights Reserved.
+ */
+
+#pageHeader {
+    border-bottom: 1px solid #000000;
+    box-shadow: 0 0 5px 0 blue;
+    background: none repeat scroll 0 0 #368ee0;
+    z-index: 100;
+}
+
+#pageHeader .navbar-header {
+    margin-left: 40px;
+    margin-right: 50px;
+}
+
+body {
+    background: none repeat scroll 0 0 #fff;
+    font-family: "微软雅黑", "Microsoft YaHei", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    padding-top: 60px;
+    height: 100%;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+body > nav {
+    margin: 0;
+}
+
+body .page-content {
+    background: #fff;
+    min-height: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+body .content {
+    padding: 0;
+    min-height: 100%;
+    position: relative;
+}
+
+.navMenu {
+    cursor: pointer;
+}
+
+.navbar {
+    margin-bottom: 15px;
+}
+
+.navbar-nav > li > a {
+    padding: 15px 10px;
+    font-size: 14px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #2ecc71;
+}
+
+.dolphin-row.main {
+    margin-left: 180px;
+}
+
+.dolphin-col-24.main {
+    padding: 0;
+}
+
+.main .page-header {
+    margin: 15px 0;
+    padding: 0 3px;
+    border-bottom: 1px solid #d2d6df;
+}
+
+.main .page-header::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.main .page-header .pull-left h1 {
+    color: #2a2a2a;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 10px 0 30px 0;
+}
+
+.page-header .fl {
+    height: 32px;
+    line-height: 32px;
+    margin-left: -40px;
+}
+
+.fl {
+    float: left;
+}
+
+.fl .btn {
+    font-size: 12px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 10px;
+    width: 90px;
+}
+
+.page-header li {
+    float: left;
+    line-height: 32px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+li {
+    list-style: outside none none;
+}
+
+/*form*/
+.form-buttons {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    overflow: hidden;
+    width: 180px;
+    background: none repeat scroll 0 0 #eee;
+}
+
+.sidebar a {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    width: 170px;
+    display: inline-block;
+}
+
+.icon-menu {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.fl .icon-menu {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.workspaceMenuPanel {
+    padding: 0;
+    box-shadow: 0 0 3px 0 #c5cacb;
+    font-size: 12px;
+    word-wrap: break-word;
+    border-right: 1px solid #e7e7eb;
+}
+
+.workspaceMenuPanel > .menu-title {
+    display: inline-block;
+    text-align: left;
+    z-index: 1;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 34px;
+    margin: 0;
+    width: 180px;
+    color: #8d8d8d;
+    border-bottom: 1px solid #e7e7eb;
+}
+
+.workspaceMenuPanel > ul {
+    list-style-type: none;
+    font-size: 15px;
+    padding-left: 0px;
+    margin: 0;
+    width: 180px;
+}
+
+.workspaceMenuPanel > ul > li {
+    line-height: 40px;
+    width: 180px;
+    text-align: left;
+}
+
+.workspaceMenuPanel > ul > li a {
+    color: #000;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.divider {
+    background-color: rgba(202, 206, 209, 0.5);
+    height: 2px;
+    margin: 3px 0;
+    overflow: hidden;
+}
+
+.sidebar li:hover, .sidebar li.selected, .sidebar a:hover, .sidebar li.selected a {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.dropdown-menu {
+    background-color: #fff;
+    margin-top: 3px;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    border-radius: 0;
+    margin-top: 3px;
+}
+
+.unzhehang {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
+    padding-left: 4px;
+}
+
+.box .box-title {
+    background: none repeat scroll 0 0 #368ee0;
+}

@@ -1,0 +1,44 @@
+<script>
+    var REQUEST_MAP = {
+        data: JSON.parse('<%= JSON.stringify(data) %>'.replace(/&#34;/g, '"') || "{}"),
+        userData: {
+            userId: "<%= session.userId %>",
+            userOrg: "<%= session.userOrg %>",
+            job: "<%= session.job %>",
+            userSite: "<%= session.userSite %>"
+        },
+        contextPath: "<%= global.config.contextPath %>",
+        viewPrefix: "<%= global.config.viewPrefix %>"
+    };
+</script>
+
+<!--jquery-->
+<script src="//cdn.bootcss.com/jquery/2.2.0/jquery.js"></script>
+
+<!--bootstrap-->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.js"></script>
+
+<!-- bootstrap-datepicker -->
+<script src="//cdn.bootcss.com/bootstrap-datepicker/1.5.1/js/bootstrap-datepicker.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-datepicker/1.5.1/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+
+<!-- bootstrap-datetimepicker -->
+<script src="<%= global.config.publicPath %>/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
+<script src="<%= global.config.publicPath %>/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+<!--file-->
+<script src="<%= global.config.publicPath %>/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="<%= global.config.publicPath %>/jquery-file-upload/js/jquery.fileupload.js"></script>
+
+<!--dolphin-->
+<script src="<%= global.config.publicPath %>/dolphin/dolphin.js"></script>
+<script src="<%= global.config.publicPath %>/dolphin/local/message_zh-CN.js"></script>
+<script src="<%= global.config.publicPath %>/custom/js/config.js"></script>
+
+<!--custom-->
+<script src="<%= global.config.publicPath %>/custom/js/common.js"></script>
+<script src="<%= global.config.publicPath %>/custom/js/menu.js"></script>
+
+
+<!--page script-->
+<script src="<%= global.config.publicPath %>/page-script<%= path; %>.js"></script>

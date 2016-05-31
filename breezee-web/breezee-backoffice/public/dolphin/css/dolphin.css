@@ -1,0 +1,1080 @@
+/*
+ * Copyright (c) 2016 Breezee.org. All Rights Reserved.
+ */
+
+/*************************************** base *******************************************/
+/******************************************** common *******************************************/
+.float-right {
+    float: right;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.hr_10 {
+    margin: 10px auto;
+}
+
+.hr_5 {
+    margin: 5px auto;
+}
+
+.default-hidden {
+    display: none;
+}
+
+.breadcrumb.breadcrumb_gt > li + li:before {
+    content: '>';
+}
+
+.panel .operationButton {
+    float: right;
+    margin-top: -6px;
+}
+
+/******************************************** overwrite bootstrap *******************************************/
+.input-group-btn-icon {
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+/******************************************** loading *******************************************/
+.loading {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+}
+
+.loading > .progressPanel {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 40%;
+    padding: 15px;
+    border: 3px solid #888;
+    border-radius: 30px;
+    background-color: #ffffff;
+    margin-left: -20%;
+}
+
+.loading > .progressPanel .progress {
+    margin: 0;
+    border-radius: 10px;
+}
+
+.loading > .progressPanel .progress .bar {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.loading > .progressPanel .progress .bar:before {
+    content: "Loading...";
+    font-size: 18px;
+}
+
+/************************ tool *****************************/
+.padding-0 {
+    padding: 0px !important;
+}
+
+.padding-1 {
+    padding: 1px !important;
+}
+
+.padding-2 {
+    padding: 2px !important;
+}
+
+.padding-3 {
+    padding: 3px !important;
+}
+
+.padding-4 {
+    padding: 4px !important;
+}
+
+.padding-5 {
+    padding: 5px !important;
+}
+
+.padding-6 {
+    padding: 6px !important;
+}
+
+.padding-7 {
+    padding: 7px !important;
+}
+
+.padding-8 {
+    padding: 8px !important;
+}
+
+.padding-9 {
+    padding: 9px !important;
+}
+
+.padding-10 {
+    padding: 10px !important;
+}
+
+.padding-11 {
+    padding: 11px !important;
+}
+
+.padding-12 {
+    padding: 12px !important;
+}
+
+.padding-13 {
+    padding: 13px !important;
+}
+
+.padding-14 {
+    padding: 14px !important;
+}
+
+.padding-15 {
+    padding: 15px !important;
+}
+
+.padding-16 {
+    padding: 16px !important;
+}
+
+.padding-17 {
+    padding: 17px !important;
+}
+
+.padding-18 {
+    padding: 18px !important;
+}
+
+.padding-19 {
+    padding: 19px !important;
+}
+
+.padding-20 {
+    padding: 20px !important;
+}
+
+/*********************/
+.transition {
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+/*水平翻转*/
+.dolphin-flipx {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.dolphin-rotate-0 {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.dolphin-rotate-30 {
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+.dolphin-rotate-60 {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    transform: rotate(60deg);
+}
+
+.dolphin-rotate-90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.dolphin-rotate-120 {
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    transform: rotate(120deg);
+}
+
+.dolphin-rotate-150 {
+    -webkit-transform: rotate(150deg);
+    -moz-transform: rotate(150deg);
+    -ms-transform: rotate(150deg);
+    -o-transform: rotate(150deg);
+    transform: rotate(150deg);
+}
+
+.dolphin-rotate-180 {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.dolphin-rotate-210 {
+    -webkit-transform: rotate(210deg);
+    -moz-transform: rotate(210deg);
+    -ms-transform: rotate(210deg);
+    -o-transform: rotate(210deg);
+    transform: rotate(210deg);
+}
+
+.dolphin-rotate-240 {
+    -webkit-transform: rotate(240deg);
+    -moz-transform: rotate(240deg);
+    -ms-transform: rotate(240deg);
+    -o-transform: rotate(240deg);
+    transform: rotate(240deg);
+}
+
+.dolphin-rotate-270 {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.dolphin-rotate-300 {
+    -webkit-transform: rotate(300deg);
+    -moz-transform: rotate(300deg);
+    -ms-transform: rotate(300deg);
+    -o-transform: rotate(300deg);
+    transform: rotate(300deg);
+}
+
+.dolphin-rotate-330 {
+    -webkit-transform: rotate(330deg);
+    -moz-transform: rotate(330deg);
+    -ms-transform: rotate(330deg);
+    -o-transform: rotate(330deg);
+    transform: rotate(330deg);
+}
+
+.dolphin-rotate-360 {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+/*摇晃*/
+@-webkit-keyframes animation_shaking {
+    0% {
+        -webkit-transform: rotate(10deg);
+        -moz-transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+        -o-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+    100% {
+        -webkit-transform: rotate(-10deg);
+        -moz-transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        -o-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+}
+
+.shake:hover {
+    animation-name: animation_shaking;
+    animation-duration: 0.75s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+.shaking {
+    animation-name: animation_shaking;
+    animation-duration: 0.1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/******************************************** form *******************************************/
+form div.form-inline .form-control {
+    width: 100px;
+}
+
+.input-group.form-control-ref .input-group-addon {
+    cursor: pointer;
+}
+
+.form-control-ref .form-control[readonly] {
+    background-color: #fff;
+}
+
+.form-horizontal .form-control-static {
+    padding-bottom: 0;
+}
+
+.baseAttr .control-label,
+.baseAttr .control-value {
+    width: 30%;
+    display: inline-block;
+}
+
+.baseAttr .control-value {
+    width: 70%;
+    word-wrap: normal;
+    white-space: nowrap;
+    overflow-x: hidden;
+    vertical-align: middle;
+}
+
+.baseAttr .form-group {
+    margin-bottom: 0;
+}
+
+.editButton {
+    text-align: right;
+}
+
+.panel .panel-operation {
+    float: right;
+    margin-top: -9px;
+}
+
+.input-group .input-group-addon {
+    cursor: pointer;
+}
+
+.form-horizontal.form-single .form-group {
+    margin-bottom: 0;
+}
+
+.control-label:after {
+    content: ":";
+}
+
+.control-label.no-content:after {
+    content: "";
+}
+
+.control-label.required:before,
+.control-label[required]:before {
+    content: "* ";
+    color: red;
+}
+
+.control-label.no-content input[type=checkbox] {
+    margin: 0;
+}
+
+/******************************************** form *******************************************/
+.dolphin_file_box {
+    position: relative;
+    overflow: auto;
+    min-height: 150px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.dolphin_file_box input[type="file"] {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.dolphin_file_box:before {
+    content: '点击或拖拽至此处上传文件';
+    position: absolute;
+    left: 0;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    color: #ccc;
+    opacity: 0.5;
+}
+
+.dolphin_file_box .dolphin_files {
+    position: absolute;
+}
+
+.dolphin_file_box .progress {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 5px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.dolphin_file_box .upload_complete {
+    position: absolute;
+    right: 0;
+    opacity: 0.4;
+    display: none;
+}
+
+/******************************************** form *******************************************/
+._lang_items > div {
+    margin-top: 5px;
+}
+
+.dolphin_i18n_box ._lang_item {
+    margin-left: -1px;
+}
+
+/******************************************** list *******************************************/
+.list-table {
+    /*margin-bottom: 20px;*/
+    width: 100%;
+    overflow: auto;
+}
+
+.panel .list-table {
+    margin-bottom: 0;
+}
+
+.list-table .table {
+    margin-bottom: 0px;
+    max-width: none;
+}
+
+.list-table .checkboxTh,
+.list-table .rowIndexTh {
+    width: 30px;
+}
+
+.total_row .listGroupTotal {
+    margin: 0 40px 0 0;
+}
+
+.dolphin_list > .table > thead > tr > th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table tbody tr td.hiddenCol,
+.table thead tr th.hiddenCol {
+    display: none;
+}
+
+.table .editButtonCol {
+    width: 53px;
+}
+
+.table td.editButtonCol {
+    vertical-align: middle;
+}
+
+.table > tbody > tr.total_row {
+    background-color: #EEE;
+    font-weight: 700;
+}
+
+.table th .iconButton {
+    cursor: pointer;
+}
+
+.table .centerHeader th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.listFooter {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.listFooter select {
+    padding: 0px;
+    width: 50px;
+    margin: -4px 0px 0;
+    height: 22px;
+}
+
+.listFooter .pageInfo {
+    margin-left: 3px;
+    line-height: 30px;
+}
+
+.listFooter .pageInfo .pageInfoNum {
+    zoom: 1.1;
+    font-weight: 700;
+}
+
+.listFooter .pagination {
+    float: right;
+    margin: 0px 2px 0 0;
+}
+
+.dolphin_list {
+    position: relative;
+}
+
+.dolphin_list .loading {
+    z-index: inherit;
+}
+
+.dolphin_list .loading > .progressPanel {
+    top: 50%;
+    margin-top: -28px;
+}
+
+/******************************************** grid *******************************************/
+.grid {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.grid > tbody > tr > td {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.grid > tbody > tr > td:first-child {
+    border-left: 1px solid #000;
+}
+
+.grid > tbody > tr > td:last-child {
+    border-right: 1px solid #000;
+}
+
+.grid .title {
+    padding: 5px 10px;
+    background: #eee;
+}
+
+.grid .title > span {
+    margin: 0px 20px 0 0;
+}
+
+.grid .details > td {
+    padding: 10px;
+}
+
+.grid .gridButton {
+    float: right;
+    cursor: pointer;
+}
+
+.grid .gridButton span:hover {
+    color: red;
+}
+
+.dolphin_grid {
+    position: relative;
+}
+
+.dolphin_grid .loading {
+    z-index: inherit;
+}
+
+.dolphin_grid .loading .progress {
+    top: 50%;
+    z-index: inherit;
+    margin-top: -27px;
+}
+
+/******************************************** pagination *******************************************/
+.pagination ul > li.disabled > a,
+.pagination ul > li.disabled > a:hover,
+.pager > li.disabled > a,
+.pager > li.disabled > a:hover {
+    cursor: not-allowed;
+}
+
+/******************************************** tree *******************************************/
+.Dolphin-tree {
+    max-height: 600px;
+    overflow: auto;
+}
+
+.tree-table td {
+    border: 0;
+    padding: 3px;
+}
+
+.tree-table .toggleIcon {
+    cursor: pointer;
+}
+
+.tree-table .glyphicon {
+    top: 0;
+}
+
+.tree-table .treeItem.highLight {
+    background: yellow;
+}
+
+.tree-table .treeItem:hover {
+    background: #eee;
+}
+
+.tree-table .tree-label {
+    cursor: pointer;
+}
+
+/******************************************** tree *******************************************/
+/*************************************** horizontal tree *******************************************/
+._horizontal_tree {
+    width: 100%;
+    overflow: auto;
+}
+
+._horizontal_tree table {
+    border-collapse: collapse;
+}
+
+._horizontal_tree._horizontal_fluid table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+._horizontal_tree td {
+    border: 1px solid #bbbbbb;
+    min-width: 150px;
+}
+
+._horizontal_tree ._level {
+    width: 150px;
+    min-width: 150px;
+    height: 350px;
+    position: relative;
+    display: inline-block;
+}
+
+._horizontal_tree._horizontal_fluid ._level {
+    width: 100%;
+}
+
+._horizontal_tree ._level ._title {
+    background-color: #eee;
+    border-bottom: 1px solid #bbbbbb;
+    text-align: center;
+    font-weight: 700;
+}
+
+._horizontal_tree ._level ._items ._item {
+    margin: 5px 5px 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0 3px;
+}
+
+._horizontal_tree ._level ._items ._item.active {
+    cursor: pointer;
+    background: #CCCCCC;
+}
+
+._horizontal_tree ._level ._items ._item.selected {
+    background: #356aa0;
+    color: #ffffff;
+}
+
+._horizontal_tree ._level ._items ._item:hover {
+    background: #5bc0de;
+    color: #ffffff;
+}
+
+._horizontal_tree ._level ._items ._item ._itemName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 65%;
+    display: inline-block;
+    vertical-align: sub;
+}
+
+._horizontal_tree ._level ._items ._item ._itemButtons {
+    float: right;
+    margin-right: 5px;
+}
+
+._horizontal_tree ._level ._items ._item ._itemButtons > .glyphicon {
+    margin-left: 5px;
+    display: none;
+}
+
+._horizontal_tree ._level ._items ._item:hover ._itemButtons > .glyphicon {
+    display: inline-block;
+}
+
+._horizontal_tree ._level ._items ._item ._itemButtons > .glyphicon {
+    transition: All 0.3s ease-in-out;
+    -webkit-transition: All 0.3s ease-in-out;
+    -moz-transition: All 0.3s ease-in-out;
+    -o-transition: All 0.3s ease-in-out;
+}
+
+._horizontal_tree ._level ._items ._item ._itemButtons > .glyphicon:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    color: #d9534f;
+    /*color: #4cae4c;*/
+}
+
+._horizontal_tree ._level ._button {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+/***************************************** ref ********************************************/
+.ref-condition {
+    width: 200px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/***************************************** row-col ********************************************/
+.dolphin-row {
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.dolphin-row:before,
+.dolphin-row:after {
+    display: table;
+    content: " ";
+}
+
+.dolphin-row:after {
+    clear: both;
+}
+
+.modal-body .dolphin-row {
+    position: relative;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.dolphin-col-0 {
+    width: 0%;
+}
+
+.modal-body .dolphin-col-0 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-1 {
+    width: 4.16666667%;
+}
+
+.modal-body .dolphin-col-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-2 {
+    width: 8.33333333%;
+}
+
+.modal-body .dolphin-col-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-3 {
+    width: 12.5%;
+}
+
+.modal-body .dolphin-col-3 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-4 {
+    width: 16.66666667%;
+}
+
+.modal-body .dolphin-col-4 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-5 {
+    width: 20.83333333%;
+}
+
+.modal-body .dolphin-col-5 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-6 {
+    width: 25%;
+}
+
+.modal-body .dolphin-col-6 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-7 {
+    width: 29.16666667%;
+}
+
+.modal-body .dolphin-col-7 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-8 {
+    width: 33.33333333%;
+}
+
+.modal-body .dolphin-col-8 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-9 {
+    width: 37.5%;
+}
+
+.modal-body .dolphin-col-9 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-10 {
+    width: 41.66666667%;
+}
+
+.modal-body .dolphin-col-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-11 {
+    width: 45.83333333%;
+}
+
+.modal-body .dolphin-col-11 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-12 {
+    width: 50%;
+}
+
+.modal-body .dolphin-col-12 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-13 {
+    width: 54.16666667%;
+}
+
+.modal-body .dolphin-col-13 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-14 {
+    width: 58.33333333%;
+}
+
+.modal-body .dolphin-col-14 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-15 {
+    width: 62.5%;
+}
+
+.modal-body .dolphin-col-15 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-16 {
+    width: 66.66666667%;
+}
+
+.modal-body .dolphin-col-16 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-17 {
+    width: 70.83333333%;
+}
+
+.modal-body .dolphin-col-17 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-18 {
+    width: 75%;
+}
+
+.modal-body .dolphin-col-18 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-19 {
+    width: 79.16666667%;
+}
+
+.modal-body .dolphin-col-19 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-20 {
+    width: 83.33333333%;
+}
+
+.modal-body .dolphin-col-20 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-21 {
+    width: 87.5%;
+}
+
+.modal-body .dolphin-col-21 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-22 {
+    width: 91.66666667%;
+}
+
+.modal-body .dolphin-col-22 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-23 {
+    width: 95.83333333%;
+}
+
+.modal-body .dolphin-col-23 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col-24 {
+    width: 100%;
+}
+
+.modal-body .dolphin-col-24 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dolphin-col,
+.dolphin-col-0,
+.dolphin-col-1,
+.dolphin-col-2,
+.dolphin-col-3,
+.dolphin-col-4,
+.dolphin-col-5,
+.dolphin-col-6,
+.dolphin-col-7,
+.dolphin-col-8,
+.dolphin-col-9,
+.dolphin-col-10,
+.dolphin-col-11,
+.dolphin-col-12,
+.dolphin-col-13,
+.dolphin-col-14,
+.dolphin-col-15,
+.dolphin-col-16,
+.dolphin-col-17,
+.dolphin-col-18,
+.dolphin-col-19,
+.dolphin-col-20,
+.dolphin-col-21,
+.dolphin-col-22,
+.dolphin-col-23,
+.dolphin-col-24 {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dolphin-col,
+.dolphin-row,
+.dolphin-row:before,
+.dolphin-row.after,
+.dolphin-col-0,
+.dolphin-col-1,
+.dolphin-col-2,
+.dolphin-col-3,
+.dolphin-col-4,
+.dolphin-col-5,
+.dolphin-col-6,
+.dolphin-col-7,
+.dolphin-col-8,
+.dolphin-col-9,
+.dolphin-col-10,
+.dolphin-col-11,
+.dolphin-col-12,
+.dolphin-col-13,
+.dolphin-col-14,
+.dolphin-col-15,
+.dolphin-col-16,
+.dolphin-col-17,
+.dolphin-col-18,
+.dolphin-col-19,
+.dolphin-col-20,
+.dolphin-col-21,
+.dolphin-col-22,
+.dolphin-col-23,
+.dolphin-col-24 {
+    box-sizing: border-box;
+}

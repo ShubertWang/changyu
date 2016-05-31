@@ -13,7 +13,6 @@ import org.springframework.data.domain.Page;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -37,9 +36,9 @@ public class PageResult<V> extends InfoPage implements Serializable {
      * 构造方法
      * 我们必须提供回调来实现
      *
-     * @param page
-     * @param cla
-     * @param <E>
+     * @param page 分页数据
+     * @param cla 需要转换的类
+     * @param <E> 分页对象
      */
     protected <E> PageResult(Page<E> page, Class<V> cla) {
         this(page, cla, null);

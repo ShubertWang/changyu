@@ -4,13 +4,8 @@
 
 package org.breezee.config;
 
-import com.alibaba.dubbo.remoting.http.servlet.DispatcherServlet;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.breezee.common.framework.RetInfoBuilder;
-import org.breezee.common.framework.filter.DubboLocaleFilter;
-import org.breezee.common.framework.servlet.DubboServletContextInitializer;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.boot.context.embedded.ServletContextInitializer;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +15,7 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import java.util.TimeZone;
 
 /**
+ * 环境变量设置
  * Created by Silence on 2016/2/9.
  */
 @Configuration
@@ -29,21 +25,20 @@ import java.util.TimeZone;
 })
 public class EnvConfiguration implements InitializingBean {
 
-    @Bean
-    public DispatcherServlet services() {
-        return new DispatcherServlet();
-    }
-
-    @Bean
-    public ServletContextInitializer servletContextInitializer() {
-        return new DubboServletContextInitializer();
-    }
+//    @Bean
+//    public DispatcherServlet services() {
+//        return new DispatcherServlet();
+//    }
+//
+//    @Bean
+//    public ServletContextInitializer servletContextInitializer() {
+//        return new DubboServletContextInitializer();
+//    }
 
     @Bean
     public MessageSource messageSource() {
-        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-//        messageSource.setBasenames("messages","i18n");
-        return messageSource;
+        //        messageSource.setBasenames("messages","i18n");
+        return new ResourceBundleMessageSource();
     }
 
     @Bean
@@ -51,10 +46,10 @@ public class EnvConfiguration implements InitializingBean {
         return new ObjectMapper();
     }
 
-    @Bean
-    public DubboLocaleFilter dubboLocaleFilter() {
-        return new DubboLocaleFilter();
-    }
+//    @Bean
+//    public DubboLocaleFilter dubboLocaleFilter() {
+//        return new DubboLocaleFilter();
+//    }
 
     @Override
     public void afterPropertiesSet() throws Exception {

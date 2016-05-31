@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Copyright (c) 2016.
-  ~ Breezee.com All Rights Reserved.
+  ~ Copyright (c) 2016 Breezee.org. All Rights Reserved.
   -->
 
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://www.springframework.org/schema/beans" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
@@ -52,8 +51,8 @@
     <!--<dubbo:protocol name="rest" port="8888" server="tjws" contextpath="services"/>-->
 
     <!-- use tomcat server -->
-    <dubbo:protocol name="rest" port="${server.port}" threads="500"
-                    contextpath="services" server="servlet" accepts="500"/>
+    <!--<dubbo:protocol name="rest" port="${server.port}" threads="500"-->
+    <!--contextpath="services" server="servlet" accepts="500"/>-->
 
     <!-- use the external tomcat or other server with the servlet approach; the port and contextpath must be exactly the same as those in external server -->
     <!--<dubbo:protocol name="rest" port="8888" contextpath="services" server="servlet"/>-->

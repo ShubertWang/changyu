@@ -1,0 +1,38 @@
+<div class="page-header">
+    <div class="pull-left">
+        <h1 class="content-title">数据字典</h1>
+        <ul class="fl">
+            <li>
+                <button class="btn btn-block btn-info"><i class="fui-plus-circle icon-menu"></i></i><span>新建枚举</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="dolphin-col-24 main" id="myContent">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary box" id="enumList">
+                <div class="panel-heading box-title">
+                    <h3 class="panel-title">
+                        <i class="fa fa-table fa-lg" aria-hidden="true"></i>
+                        枚举列表
+                    </h3>
+                </div>
+                <div id="enumList"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-info" id="enum_option">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <i class="fa fa-list fa-lg" aria-hidden="true"></i>
+                        枚举项
+                    </h3>
+                </div>
+                <div id="enumItemList"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="<%= global.config.publicPath %>/page/scripts/<%= path %>.js"></script>

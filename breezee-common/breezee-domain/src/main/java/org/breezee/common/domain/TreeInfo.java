@@ -4,6 +4,8 @@
 
 package org.breezee.common.domain;
 
+import org.breezee.common.domain.constants.InfoStatusEnum;
+
 import java.util.List;
 
 /**
@@ -76,7 +78,7 @@ public class TreeInfo<T> extends BaseInfo {
     }
 
     public boolean isEnabled() {
-        return status == STATUS_ON;
+        return status.intValue() == InfoStatusEnum.ENABLE.getValue().intValue();
     }
 
     public int getIndex() {
@@ -133,7 +135,7 @@ public class TreeInfo<T> extends BaseInfo {
      * 获取节点路径
      * 在子类中具体实现
      *
-     * @return
+     * @return 返回路径信息
      */
     public String getPath() {
         return null;

@@ -1,0 +1,14 @@
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.<%= global.config.mode %>js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.<%= global.config.mode %>js"></script>
+<script src="<%= global.config.publicPath %>/dolphin/dolphin.<%= global.config.mode %>js"></script>
+<script>
+    var breezeeContext = {
+        contextPath: "<%= global.config.contextPath %>",
+        viewPrefix: "<%= global.config.viewPrefix %>",
+        queryData: JSON.parse('<%= JSON.stringify(queryData); %>'.replace(/&#34;/g, '"') || "{}")
+    };
+    Dolphin.path.contextPath = breezeeContext.contextPath;
+    Dolphin.defaults.url.viewPrefix = breezeeContext.viewPrefix;
+</script>
+<script src="<%= global.config.publicPath %>/page/scripts/common/menu.js"></script>
+<script src="<%= global.config.publicPath %>/page/scripts/<%= path; %>.js"></script>

@@ -4,6 +4,7 @@
 
 package org.breezee.common.domain;
 
+import org.breezee.common.domain.constants.InfoStatusEnum;
 import org.breezee.common.domain.exception.BreezeeException;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.Map;
 
 /**
  * 服务层高度抽象接口
+ * 提供：保存，删除，按ID查找，按Code查找，列表查询，分页查询，条目数，状态更新
  * Created by Silence on 2016/4/15.
  */
 public interface IServiceLayer<T extends BaseInfo> {
@@ -70,13 +72,13 @@ public interface IServiceLayer<T extends BaseInfo> {
 
     /**
      * 更新指定领域对象的状态
-     * @param id
-     * @param status
-     * @throws BreezeeException
+     * @param id 对象唯一标识
+     * @param status 状态值
+     * @throws BreezeeException 异常
      */
-    default void updateStatus(Long id, int status) throws BreezeeException{
+    default void updateStatus(Long id, InfoStatusEnum status) throws BreezeeException {
         T t = findById(id);
-        t.setStatus(status);
+        t.setStatus(status.getValue());
         this.saveInfo(t);
     }
 }

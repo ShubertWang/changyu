@@ -4,6 +4,8 @@
 
 package org.breezee.common.domain;
 
+import org.breezee.common.domain.constants.InfoStatusEnum;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
@@ -15,11 +17,6 @@ import java.util.Map;
  * Created by Silence on 2016/2/6.
  */
 public class BaseInfo implements Serializable, Cloneable, IDumpObject {
-
-    public static final int STATUS_ON = 1;
-    public static final int STATUS_OFF = 0;
-    public static final int STATUS_SUCCESS = 100;
-    public static final int STATUS_ERROR = -100;
 
     /**
      * 数据主键
@@ -39,7 +36,7 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
     /**
      * 状态
      */
-    protected int status = STATUS_ON;
+    protected Integer status = InfoStatusEnum.ENABLE.getValue();
 
     /**
      * 描述或者备注信息
@@ -77,10 +74,16 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
     protected String language;
 
     /**
+     * 在集群环境下
+     * 是在哪个节点保存的
+     */
+    protected String nodeId;
+
+    /**
      * 每张表，确保此值被写入
      * 行数，一般用来做排序的
      * 在存入缓存的时候，也可以用来做分页查询
-     * 所以我们在保存对象的时候，一定要设置好此值得正确性。
+     * 所以我们在保存对象的时候，一定要保证此值的正确性。
      */
     protected Long rowNum;
 
@@ -88,6 +91,12 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
      * 版本，用来实现乐观锁
      */
     protected Integer version;
+
+    /**
+     * 终端设备
+     * 一般用来说明此次提交发生在什么类型的设备上
+     */
+    protected Integer equipment;
 
     /**
      * 扩展属性信息
@@ -118,11 +127,11 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
         this.name = name;
     }
 
-    public int getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -182,6 +191,14 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
         this.language = language;
     }
 
+    public String getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+    }
+
     public Long getRowNum() {
         return rowNum;
     }
@@ -198,6 +215,14 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
         this.version = version;
     }
 
+    public Integer getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(Integer equipment) {
+        this.equipment = equipment;
+    }
+
     public Map<String, Object> getProperties() {
         if(properties==null)
             this.properties = new HashMap<>();
@@ -211,8 +236,8 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
     /**
      * 查询的强类型映射控制。
      * 在子类中实现
-     * @param query
-     * @return
+     * @param query 查询的参数集
+     * @return 是否允许查询
      */
     public boolean checkQuery(Map<String,Object> query){
         //在子类中，强制指定其查询条件。
@@ -227,14 +252,14 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
      * 一方面减少包的依赖，另外也是提高效率
      */
     @Override
-    public BaseInfo clone() {
-        BaseInfo bi = new BaseInfo();
-        return bi;
+    public BaseInfo clone() throws CloneNotSupportedException {
+        super.clone();
+        return new BaseInfo();
     }
 
     @Override
     public String toString(){
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append(this.getId());
         if(this.code!=null)
             sb.append(",").append(this.getCode());

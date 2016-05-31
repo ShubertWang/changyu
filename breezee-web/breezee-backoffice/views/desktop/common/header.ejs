@@ -1,0 +1,38 @@
+<%
+var prePath = global.config.contextPath + global.config.viewPrefix;
+%>
+<nav class="navbar navbar-default navbar-fixed-top" id="pageHeader">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="<%= prePath %>/" style="padding:0;">
+                <img src="<%= global.config.publicPath %>/page/images/logo.png" style="height:50px;"/>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="<%= prePath %>#" class="fui-user dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-haspopup="true" aria-expanded="false">
+                        <em class="unzhehang" style="width: 60px;"><%= session.userData.userName %></em>
+                        <span class="caret" style="margin-bottom: 8px;"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="navMenu" href="<%= prePath %>/auth/index-myInfo">个人信息</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a class="navMenu" href="<%= prePath %>/../login/logout">退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left" style="margin-right: 10px;">
+                <li class="index"><a href="<%= prePath %>/">首页</a></li>
+                <li class="order"><a href="<%= prePath %>/order/">业务管理</a></li>
+                <li class="customer"><a href="<%= prePath %>/customer/">客户管理</a></li>
+                <li class="product"><a href="<%= prePath %>/product/">商品管理</a></li>
+                <li class="news"><a href="<%= prePath %>/news/">公告管理</a></li>
+                <li class="statistic"><a href="<%= prePath %>/statistic/">统计分析</a></li>
+                <li class="system"><a href="<%= prePath %>/system/">系统管理</a></li>
+            </ul>
+
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
