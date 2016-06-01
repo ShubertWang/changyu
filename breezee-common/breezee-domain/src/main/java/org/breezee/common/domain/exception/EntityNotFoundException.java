@@ -11,7 +11,7 @@ package org.breezee.common.domain.exception;
 public class EntityNotFoundException extends PersistenceException {
 
     public EntityNotFoundException(String message) {
-        super(message);
+        super(message + ":Not Found");
     }
 
     public EntityNotFoundException(String message, Throwable cause) {

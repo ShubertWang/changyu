@@ -91,9 +91,9 @@ public class OrganizationEntity extends BaseEntity<OrganizationEntity, Organizat
         return this.status;
     }
 
-    @Column(name = "NODE_ID", nullable = false)
-    public String getNodeId() {
-        return nodeId;
+    @Column(name = "NODE_HOST", nullable = false, length = 128)
+    public String getNode() {
+        return node;
     }
 
     @OneToMany(mappedBy = "organization", cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)

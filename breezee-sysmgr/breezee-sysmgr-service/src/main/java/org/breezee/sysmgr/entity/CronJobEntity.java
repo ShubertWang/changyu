@@ -87,9 +87,9 @@ public class CronJobEntity extends BaseEntity<CronJobEntity, CronJobInfo> {
         return this.status;
     }
 
-    @Column(name = "NODE_ID", nullable = false)
-    public String getNodeId() {
-        return nodeId;
+    @Column(name = "NODE_HOST", nullable = false, length = 128)
+    public String getNode() {
+        return node;
     }
 
     @Column(name = "CRONTAB", nullable = false)

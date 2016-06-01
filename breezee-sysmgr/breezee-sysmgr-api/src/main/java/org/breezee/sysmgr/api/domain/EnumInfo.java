@@ -6,6 +6,7 @@ package org.breezee.sysmgr.api.domain;
 
 import org.breezee.common.domain.BaseInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,6 +18,8 @@ public class EnumInfo extends BaseInfo {
     protected List<EnumItemInfo> items;
 
     public List<EnumItemInfo> getItems() {
+        if (items == null)
+            items = new ArrayList<>();
         return items;
     }
 

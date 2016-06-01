@@ -6,7 +6,9 @@ package org.breezee.common.framework;
 
 import org.breezee.common.domain.BaseInfo;
 import org.breezee.common.domain.BizInfo;
-import org.breezee.common.framework.util.BeanUtil;
+import org.springframework.util.StringUtils;
+
+import java.util.UUID;
 
 /**
  * * 持久实体域：基类
@@ -96,6 +98,10 @@ public class BaseEntity<T extends BaseEntity, R extends BaseInfo> extends BizInf
 //        return equipment;
 //    }
 
+    public static void main(String[] args) {
+        System.out.println(UUID.randomUUID().toString().replaceAll("-", ""));
+    }
+
     /**
      * DTO转换
      *
@@ -116,6 +122,11 @@ public class BaseEntity<T extends BaseEntity, R extends BaseInfo> extends BizInf
      * @return 解析后的实体
      */
     public T parseInfo(R r, String... ignorePro) {
+        //设置最后保存的节点
+        r.setNode(SystemTool.getHostName());
+        if (StringUtils.isEmpty(r.getId())) {
+            r.setId(SystemTool.uuid() + "." + r.getNode());
+        }
         BeanUtil.beanCopy(r, this, ignorePro);
         return (T) this;
     }

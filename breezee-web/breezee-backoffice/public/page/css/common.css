@@ -230,3 +230,100 @@ li {
 .box .box-title {
     background: none repeat scroll 0 0 #368ee0;
 }
+
+.listFooter .pagination {
+    border-radius: 0;
+    margin: 0 2px 2px 0;
+}
+
+.listFooter .pageInfo {
+    line-height: 35px;
+}
+
+.listFooter select {
+    height: 21px;
+    margin: 0;
+}
+
+.edit-form {
+    margin-top: 8px;
+}
+
+/********override bootstrap*******/
+.panel {
+    border-radius: 0;
+}
+
+.panel-heading {
+    border-radius: 0;
+}
+
+.pagination li > a, .pagination li > span {
+    min-height: 28px;
+    padding: 3px 8px;
+    line-height: 28px;
+}
+
+.pagination li:first-child > a, .pagination li:first-child > span {
+    border-radius: 0;
+}
+
+.modal-dialog {
+    position: absolute;
+    left: 30%;
+    top: 12%;
+}
+
+.modal-title {
+    float: left;
+    font-size: 17px;
+    font-weight: 200;
+    margin: 0.1em 0 0.1em 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%;
+}
+
+.modal-header {
+    background: none repeat-x scroll 50% 50% #5e748b;
+    border: 1px solid #5e748b;
+    color: #fff;
+    font-weight: bold;
+    height: 45px;
+    padding: 10px 15px;
+}
+
+.modal-content {
+    border-radius: 0;
+}
+
+.modal-footer {
+    padding: 10px;
+    text-align: center;
+}
+
+.close {
+    opacity: 1;
+    color: #fff;
+}
+
+.form-control, .select2-search input[type="text"] {
+    border: 1px solid #bdc3c7;
+    border-radius: 0;
+    height: 32px;
+    font-size: 13px;
+    line-height: inherit;
+    padding: 0;
+}
+
+.form-group label {
+    line-height: inherit;
+    padding-right: 1px;
+}
+
+.btn {
+    padding: 8px;
+    width: 90px;
+    border-radius: 1px;
+}

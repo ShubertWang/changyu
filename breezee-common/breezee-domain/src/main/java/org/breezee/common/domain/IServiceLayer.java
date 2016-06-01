@@ -31,7 +31,7 @@ public interface IServiceLayer<T extends BaseInfo> {
      * @return 被删除的对象
      * @throws BreezeeException 异常
      */
-    T deleteById(Long id) throws BreezeeException;
+    T deleteById(String id) throws BreezeeException;
 
     /**
      * 获取指定主键的领域对象
@@ -39,7 +39,7 @@ public interface IServiceLayer<T extends BaseInfo> {
      * @return 领域对象
      * @throws BreezeeException 异常
      */
-    T findById(Long id) throws BreezeeException;
+    T findById(String id) throws BreezeeException;
 
     /**
      * 获取指定业务主键的领域对象
@@ -61,7 +61,7 @@ public interface IServiceLayer<T extends BaseInfo> {
      * @param query 查询条件
      * @return 分页集合
      */
-    InfoPage<T> pageAll(Map<String,Object> query);
+    InfoPage pageAll(Map<String, Object> query);
 
     /**
      * 获取指定条件的集合数目
@@ -76,7 +76,7 @@ public interface IServiceLayer<T extends BaseInfo> {
      * @param status 状态值
      * @throws BreezeeException 异常
      */
-    default void updateStatus(Long id, InfoStatusEnum status) throws BreezeeException {
+    default void updateStatus(String id, InfoStatusEnum status) throws BreezeeException {
         T t = findById(id);
         t.setStatus(status.getValue());
         this.saveInfo(t);

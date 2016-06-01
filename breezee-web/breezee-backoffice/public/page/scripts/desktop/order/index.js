@@ -3,6 +3,6 @@
  */
 
 $(function () {
-    breezeeContext.menu.topSelect('order');
-    breezeeContext.menu.subSelect(breezeeContext.queryData.menu);
+    org.breezee.menu.topSelect('order');
+    org.breezee.menu.subSelect(org.breezee.context.queryData.menu);
 });
