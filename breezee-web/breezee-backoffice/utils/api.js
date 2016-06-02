@@ -1,6 +1,8 @@
 /*
  * Copyright (c) 2016 Breezee.org. All Rights Reserved. 
  */
+var fs = require('fs');
+
 
 /**
  *
@@ -50,7 +52,17 @@ module.exports = (function (options) {
          * 监听文件变化
          */
         listen: function () {
+            var _this = this;
             //TODO: we should watch the api file
+            var filePath = __dirname + global.config.apiFilePath;
+            fs.watchFile(filePath, {
+                interval : 60000
+            }, function (curStat, preStat) {
+                fs.readFile(filePath, "utf-8", function(error, context){
+                    global.logger.info("api config update", context);
+                    _this._data = JSON.parse(context);
+                });
+            })
         },
 
         /**
