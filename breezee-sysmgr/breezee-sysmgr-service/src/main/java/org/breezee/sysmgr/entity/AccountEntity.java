@@ -97,9 +97,9 @@ public class AccountEntity extends BaseEntity<AccountEntity, AccountInfo> {
         return this.status;
     }
 
-    @Column(name = "NODE_ID", nullable = false)
-    public String getNodeId() {
-        return nodeId;
+    @Column(name = "NODE_HOST", nullable = false, length = 128)
+    public String getNode() {
+        return node;
     }
 
     @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)

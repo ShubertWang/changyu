@@ -3,5 +3,5 @@
  */
 
 $(function () {
-    breezeeContext.menu.topSelect('customer');
+    org.breezee.menu.topSelect('customer');
 });

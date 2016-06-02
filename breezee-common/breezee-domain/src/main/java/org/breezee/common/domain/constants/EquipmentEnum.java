@@ -10,9 +10,9 @@ package org.breezee.common.domain.constants;
  */
 public enum EquipmentEnum implements ConstantEnum {
 
-    DESKTOP("desktop", 100),
-    PAD("pad", 200),
-    MOBILE("mobile", 300);
+    DESKTOP("desktop", 1),
+    PAD("pad", 3),
+    MOBILE("mobile", 5);
 
     private final String text;
 

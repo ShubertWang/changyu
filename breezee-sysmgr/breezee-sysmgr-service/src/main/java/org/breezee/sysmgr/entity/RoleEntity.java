@@ -82,9 +82,9 @@ public class RoleEntity extends BaseEntity<RoleEntity, RoleInfo> {
         return this.status;
     }
 
-    @Column(name = "NODE_ID", nullable = false)
-    public String getNodeId() {
-        return nodeId;
+    @Column(name = "NODE_HOST", nullable = false, length = 128)
+    public String getNode() {
+        return node;
     }
 
     @Column(name = "ROLE_PERMIT", length = 4000)

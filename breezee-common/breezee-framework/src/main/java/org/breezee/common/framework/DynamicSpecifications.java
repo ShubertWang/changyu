@@ -30,7 +30,7 @@ public final class DynamicSpecifications {
      * @param <T>
      * @return
      */
-    public static <T> Specification<T> createSpecification(Class<T> cla, final Map<String, Object> map) {
+    public static <T> Specification<T> createSpecification(final Map<String, Object> map) {
         map.remove("pageNumber");
         map.remove("pageSize");
         map.remove("creator");
@@ -117,17 +117,6 @@ public final class DynamicSpecifications {
             Predicate[] pre = new Predicate[predicate.size()];
             return query.where(predicate.toArray(pre)).getRestriction();
         };
-    }
-
-    /**
-     * Map转为查询条件
-     *
-     * @param map
-     * @param <T>
-     * @return
-     */
-    public static <T> Specification<T> createSpecification(final Map<String, Object> map) {
-        return createSpecification(null, map);
     }
 
 }

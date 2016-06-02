@@ -77,7 +77,7 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
      * 在集群环境下
      * 是在哪个节点保存的
      */
-    protected String nodeId;
+    protected String node;
 
     /**
      * 每张表，确保此值被写入
@@ -90,7 +90,7 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
     /**
      * 版本，用来实现乐观锁
      */
-    protected Integer version;
+    protected Integer version = 0;
 
     /**
      * 终端设备
@@ -191,12 +191,12 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
         this.language = language;
     }
 
-    public String getNodeId() {
-        return nodeId;
+    public String getNode() {
+        return node;
     }
 
-    public void setNodeId(String nodeId) {
-        this.nodeId = nodeId;
+    public void setNode(String node) {
+        this.node = node;
     }
 
     public Long getRowNum() {
@@ -253,8 +253,7 @@ public class BaseInfo implements Serializable, Cloneable, IDumpObject {
      */
     @Override
     public BaseInfo clone() throws CloneNotSupportedException {
-        super.clone();
-        return new BaseInfo();
+        return (BaseInfo) super.clone();
     }
 
     @Override

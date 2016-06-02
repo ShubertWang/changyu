@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="backoffice" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" path-to-js-file="bin/backoffice" working-dir="$PROJECT_DIR$/breezee-web/breezee-backoffice">
+  <configuration default="false" name="backoffice" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" path-to-js-file="$PROJECT_DIR$/breezee-web/breezee-backoffice/bin/backoffice.js" working-dir="$PROJECT_DIR$/breezee-web/breezee-backoffice">
     <envs>
       <env name="DEBUG" value="breezee-backoffice:*" />
     </envs>

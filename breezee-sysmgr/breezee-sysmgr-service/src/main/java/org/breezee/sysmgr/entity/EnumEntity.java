@@ -6,10 +6,12 @@ package org.breezee.sysmgr.entity;
 
 import org.breezee.common.framework.BaseEntity;
 import org.breezee.sysmgr.api.domain.EnumInfo;
+import org.breezee.sysmgr.api.domain.EnumItemInfo;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -85,9 +87,9 @@ public class EnumEntity extends BaseEntity<EnumEntity, EnumInfo> {
         return this.status;
     }
 
-    @Column(name = "NODE_ID", nullable = false)
-    public String getNodeId() {
-        return nodeId;
+    @Column(name = "NODE_HOST", nullable = false, length = 128)
+    public String getNode() {
+        return node;
     }
 
     @OneToMany(mappedBy = "master", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, orphanRemoval = true)
@@ -97,5 +99,29 @@ public class EnumEntity extends BaseEntity<EnumEntity, EnumInfo> {
 
     public void setItems(Set<EnumItemEntity> items) {
         this.items = items;
+    }
+
+    public void addItem(EnumItemEntity item) {
+        item.setMaster(this);
+        this.items.add(item);
+    }
+
+    public EnumInfo toInfo(EnumInfo r, String... ignorePro) {
+        super.toInfo(r, "items");
+        this.getItems().forEach(a -> {
+            r.getItems().add(a.toInfo(new EnumItemInfo()));
+        });
+        return r;
+    }
+
+    public EnumEntity parseInfo(EnumInfo info, String... ignorePro) {
+        super.parseInfo(info, "items");
+        if (info.getItems() != null) {
+            this.items = new HashSet<>();
+            info.getItems().forEach(a -> {
+                this.addItem(new EnumItemEntity().parseInfo(a));
+            });
+        }
+        return this;
     }
 }

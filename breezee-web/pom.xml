@@ -15,5 +15,9 @@
 
     <artifactId>breezee-web</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>breezee-backoffice</module>
+        <module>breezee-frontend</module>
+    </modules>
 
 </project>

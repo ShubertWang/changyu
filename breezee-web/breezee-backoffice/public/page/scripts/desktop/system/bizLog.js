@@ -4,7 +4,7 @@
 
 $(function () {
 
-    breezeeContext.page = {
+    org.breezee.page = {
 
         init: function () {
             console.log(this.path);
@@ -13,5 +13,5 @@ $(function () {
         path: 'bbb'
     };
 
-    breezeeContext.page.init();
+    org.breezee.page.init();
 });

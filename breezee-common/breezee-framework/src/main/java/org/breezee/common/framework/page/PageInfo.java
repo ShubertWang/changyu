@@ -1,7 +1,6 @@
 /*
  * Copyright (c) 2016 Breezee.org. All Rights Reserved.
  */
-
 package org.breezee.common.framework.page;
 
 import org.springframework.data.domain.Pageable;
@@ -17,7 +16,7 @@ import java.util.Map;
  */
 public class PageInfo implements Pageable, Serializable {
 
-    public final static int DEFAULT_PAGE_SIZE = 5;
+    public final static int DEFAULT_PAGE_SIZE = 15;
 
     private int pageNumber;
 
@@ -38,7 +37,7 @@ public class PageInfo implements Pageable, Serializable {
             }
             Object b = m.get("pageSize");
             if (b == null || b.toString().equals("null"))
-                b = "5";
+                b = DEFAULT_PAGE_SIZE;
             this.pageNumber = Integer.parseInt(a.toString());
             this.pageSize = Integer.parseInt(b.toString());
         }
@@ -77,9 +76,17 @@ public class PageInfo implements Pageable, Serializable {
         return pageNumber;
     }
 
+    public void setPageNumber(int pageNumber) {
+        this.pageNumber = pageNumber;
+    }
+
     @Override
     public int getPageSize() {
         return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
     }
 
     @Override
@@ -90,6 +97,10 @@ public class PageInfo implements Pageable, Serializable {
     @Override
     public Sort getSort() {
         return sort;
+    }
+
+    public void setSort(Sort sort) {
+        this.sort = sort;
     }
 
     @Override
@@ -114,18 +125,6 @@ public class PageInfo implements Pageable, Serializable {
     @Override
     public boolean hasPrevious() {
         return pageNumber > 0;
-    }
-
-    public void setPageNumber(int pageNumber) {
-        this.pageNumber = pageNumber;
-    }
-
-    public void setPageSize(int pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public void setSort(Sort sort) {
-        this.sort = sort;
     }
 
     public String getSortId() {

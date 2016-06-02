@@ -1,13 +1,14 @@
 /*
  * Copyright (c) 2016 Breezee.org. All Rights Reserved.
  */
-
 package org.breezee.common.framework.page;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javafx.util.Callback;
+import org.breezee.common.domain.BaseInfo;
 import org.breezee.common.domain.InfoPage;
+import org.breezee.common.framework.BaseEntity;
 import org.springframework.data.domain.Page;
 
 import java.io.Serializable;
@@ -20,10 +21,10 @@ import java.util.Map;
  * <p>
  * Created by Silence on 2016/1/22.
  */
-public class PageResult<V> extends InfoPage implements Serializable {
+public class PageResult<E extends BaseEntity, V extends BaseInfo> extends InfoPage implements Serializable {
 
     @JsonIgnore
-    private transient Page<? extends Serializable> page;
+    private transient Page<E> page;
 
     /**
      * 扩展属性，序列化的时候输出
@@ -35,17 +36,11 @@ public class PageResult<V> extends InfoPage implements Serializable {
     /**
      * 构造方法
      * 我们必须提供回调来实现
-     *
      * @param page 分页数据
-     * @param cla 需要转换的类
-     * @param <E> 分页对象
+     * @param callback 回调方法
      */
-    protected <E> PageResult(Page<E> page, Class<V> cla) {
-        this(page, cla, null);
-    }
-
-    public <E> PageResult(Page<E> page, Class<V> cla, Callback<E, V> callback) {
-        this.page = (Page<? extends Serializable>) page;
+    public PageResult(Page<E> page, Callback<E, V> callback) {
+        this.page = page;
         this.total = page.getTotalElements();
         content = new ArrayList<>();
         page.getContent().forEach(a -> {

@@ -3,18 +3,12 @@
  */
 
 $(function () {
-    breezeeContext.menu.topSelect('system');
-});
+    org.breezee.menu.topSelect('system');
 
-
-$(function () {
-    breezeeContext.page = {
-
+    org.breezee.page = {
         init: function () {
-            console.log(this.path);
-        },
-
-        path: 'ccccc'
+        }
     };
-    breezeeContext.page.init();
+    org.breezee.page.init();
+
 });

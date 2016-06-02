@@ -3,7 +3,8 @@
         <h1 class="content-title">数据字典</h1>
         <ul class="fl">
             <li>
-                <button class="btn btn-block btn-info"><i class="fui-plus-circle icon-menu"></i></i><span>新建枚举</span>
+                <button class="btn btn-block btn-info newEnum"><i class="fui-plus-circle icon-menu"></i></i>
+                    <span>新建枚举</span>
                 </button>
             </li>
         </ul>
@@ -12,7 +13,7 @@
 <div class="dolphin-col-24 main" id="myContent">
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-primary box" id="enumList">
+            <div class="panel panel-primary box">
                 <div class="panel-heading box-title">
                     <h3 class="panel-title">
                         <i class="fa fa-table fa-lg" aria-hidden="true"></i>
@@ -34,5 +35,79 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal" id="enum_win">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <span class="modal-title">枚举维护</span>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                                  data-toggle="tab">枚举信息</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">枚举项</a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <form class="form-horizontal edit-form">
+                                <input type="hidden" class="form-control" name="id">
+                                <div class="form-group">
+                                    <label class="col-md-offset-1 col-md-2 control-label">枚举名称</label>
+                                    <div class="col-md-6">
+                                        <input class="form-control" name="name" type="text" dol-validate="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-offset-1 col-md-2 control-label">枚举编码</label>
+                                    <div class="col-md-6">
+                                        <input class="form-control" name="code" type="text" dol-validate="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-offset-1 col-md-2 control-label">是否启用</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="status" dol-validate="required">
+                                            <option value="1">是</option>
+                                            <option value="0">否</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-offset-1 col-md-2 control-label">备注信息</label>
+                                    <div class="col-md-6">
+                                        <textarea class="form-control" name="remark"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <form class="edit-form">
+                                <div id="enum_option_list">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary enum_submit">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
 </div>
 <script src="<%= global.config.publicPath %>/page/scripts/<%= path %>.js"></script>

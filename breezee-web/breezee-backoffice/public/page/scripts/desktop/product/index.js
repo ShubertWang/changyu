@@ -3,5 +3,6 @@
  */
 
 $(function () {
-    breezeeContext.menu.topSelect('product');
+    org.breezee.menu.topSelect('product');
+    org.breezee.menu.subSelect(breezeeContext.queryData.menu);
 });
