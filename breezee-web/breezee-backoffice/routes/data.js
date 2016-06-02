@@ -3,9 +3,9 @@
  */
 
 var router = require('express').Router();
-var security = require('../utils/auth');
+var api = require('../utils/api');
 
-router.all('*', security.apiAuthentication);
+router.all('*', api.apiAuthentication);
 
 // 该路由使用的中间件
 router.use(function timeLog(req, res, next) {

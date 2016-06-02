@@ -4,6 +4,7 @@
 
 var request = require('request');
 var extend = require('extend');
+var uuid = require('uuid');
 
 /**
  * 工具类
@@ -83,8 +84,20 @@ module.exports = {
         return newStr;
     },
 
+    /**
+     * 获取请求端的类型
+     * @param str
+     * @returns {string}
+     */
     endType: function (str) {
         return /mobile/.test(str) ? "mobile" : "desktop";
+    },
+
+    /**
+     * 获取随机串
+     */
+    uuid: function () {
+        return uuid.v4();
     }
 
 };

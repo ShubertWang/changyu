@@ -14,10 +14,8 @@ var session = require('express-session');
 global.config = require('./config.js');
 global.tool = require('./utils/tool');
 
-log4js.configure(global.config.log);
-var logger = log4js.getLogger("sys");
-
-logger.info('配置ok');
+log4js.configure(require('./log4js'));
+var logger = log4js.getLogger("http");
 
 var routes = require('./routes/index');
 var viewRoutes = require('./routes/view');
@@ -36,7 +34,7 @@ app.set('trust proxy', true);
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // app.use(logger('dev'));
-app.use(log4js.connectLogger(logger, {level:'info', format:':method | :status | :response-time ms | :url '}));
+app.use(log4js.connectLogger(logger, {level: 'debug', format: ':method | :status | :response-time ms | :url '}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());

@@ -17,7 +17,6 @@
     "extend": "latest",
     "request": "latest",
     "uuid": "latest",
-
     "log4js" : "latest"
   }
 }

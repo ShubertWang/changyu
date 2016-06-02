@@ -51,20 +51,6 @@ module.exports = {
     },
 
     /**
-     * API接口调用的安全认证
-     * @param req
-     * @param res
-     * @param next
-     */
-    apiAuthentication: function (req, res, next) {
-        console.info('auth::apiAuthentication');
-        //判断从浏览器头部传输过来的token或者session是否有效
-        //?或者从cookie中获取？
-        //确认权限
-        next();
-    },
-
-    /**
      * 加载用户信息
      * @param req
      * @param res
