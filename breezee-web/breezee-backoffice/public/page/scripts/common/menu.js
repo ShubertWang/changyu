@@ -55,8 +55,7 @@ org.breezee.menu = (function () {
                 }
             },
             success: function (content, textStatus) {
-                if (org.breezee.page)
-                    delete org.breezee.page;
+                org.breezee.destroy('page');
                 $(this).empty();
                 $(this).append(content);
             }
