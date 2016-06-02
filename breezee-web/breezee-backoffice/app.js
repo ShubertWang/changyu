@@ -5,13 +5,19 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
-var logger = require('morgan');
+// var logger = require('morgan');
+var log4js = require('log4js');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
 global.config = require('./config.js');
 global.tool = require('./utils/tool');
+
+log4js.configure(global.config.log);
+var logger = log4js.getLogger("sys");
+
+logger.info('配置ok');
 
 var routes = require('./routes/index');
 var viewRoutes = require('./routes/view');
@@ -29,7 +35,8 @@ app.set('trust proxy', true);
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+// app.use(logger('dev'));
+app.use(log4js.connectLogger(logger, {level:'info', format:':method | :status | :response-time ms | :url '}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());

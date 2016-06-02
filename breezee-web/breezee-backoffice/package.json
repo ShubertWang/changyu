@@ -16,6 +16,8 @@
     "serve-favicon": "~2.3.0",
     "extend": "latest",
     "request": "latest",
-    "uuid": "latest"
+    "uuid": "latest",
+
+    "log4js" : "latest"
   }
 }
